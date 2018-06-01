@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="{% static 'gold/css/style.css' %}">
+</head>
+<body>
+    <h2>Ninja Gold</h2>
+    <h3>Gold Count: {{request.session.gold}}</h3>
+    <form action="/process_money/farm" method="post">
+        {% csrf_token %}
+        <h4>Farm</h4>
+        <p>Earns 10-20 gold</p>
+        <input type="submit" value="Find Gold!">
+    </form>
+    <form action="/process_money/cave" method="post">
+        {% csrf_token %}
+        <h4>Cave</h4>
+        <p>Earns 5-10 gold</p>
+        <input type="submit" value="Find Gold!">
+    </form>
+    <form action="/process_money/house" method="post">
+        {% csrf_token %}
+        <h4>House</h4>
+        <p>Earns 2-5 gold</p>
+        <input type="submit" value="Find Gold!">
+    </form>
+    <form action="/process_money/casino" method="post">
+        {% csrf_token %}
+        <h4>Casino</h4>
+        <p>Earns/takes 0-50 gold</p>
+        <input type="submit" value="Find Gold!">
+    </form>
+    <div class="log">
+    {% for event in request.session.log %}
+        <p class="{{event.1}}">{{event.0}}</p>
+    {% endfor %}
+    </div>
+</body>
+</html>
