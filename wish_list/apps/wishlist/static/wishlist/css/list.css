@@ -1,0 +1,29 @@
+body {
+    margin-left: 30px;
+}
+
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 40px;
+    overflow-x: auto;
+}
+
+table, td, th {
+    border: 1px solid black;
+    padding: 5px;
+}
+#logout {
+    float: right;
+    margin-right: 600px;
+}
+#add {
+    margin-left: 500px;
+    margin-top: 10px;
+}
+tr:nth-child(even){
+    background-color:#f1f2f6;
+}
+th{
+    background-color: #dfe6e9;
+}

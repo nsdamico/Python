@@ -1,0 +1,12 @@
+#home,
+#logout{
+    float: right;
+}
+body {
+    margin-left: 30px;
+}
+
+#logout{
+    margin-right: 600px;
+    margin-left: 15px;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <h1>Hello, {{users.name}}</h1>
+    <a href="/logout">Logout</a>
+    <a href="/wishpage/add">Add item </a>
+    <h2>Your Wish List</h2>
+    <table>
+        <th>Item</th>
+        <th>Added By</th>
+        <th>Date Added</th>
+        <th>Action</th>
+        {% for place in places %}
+        <tr>
+            <td><a href="/wishpage/items/{{place.id}}">{{place.items}}</a></td>
+            <td>{{place.uploader}}</td>
+            <td>{{place.date_added}}</td>
+            <td><a href="/delete/{{items.id}}">Delete</td>
+        </tr>
+      {% endfor %}
+      </table>
+      <h2>Other users Wish List</h2>
+      <table>
+        <th>Item</th>
+        <th>Added By</th>
+        <th>Date Added</th>
+        <th>Action</th>
+        {% for item in items %}
+          <tr>
+            <td><a href="/wishpage/items/{{item.id}}">{{item.items}}</a></td>
+            <td>{{item.uploader}}</td>
+            <td>{{item.date_added}}</td>
+            <td><a href="/join/{{item.id}}">Add to my wish list</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
